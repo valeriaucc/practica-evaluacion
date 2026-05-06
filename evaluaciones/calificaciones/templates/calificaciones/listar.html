@@ -1,0 +1,17 @@
+<h2>Lista</h2>
+
+<table border="1">
+{% for c in calificaciones %}
+<tr>
+<td>{{ c.nombre_estudiante }}</td>
+<td>{{ c.promedio }}</td>
+<td>
+<a href="{% url 'editar' c.id %}">Editar</a>
+<a href="{% url 'eliminar' c.id %}">Eliminar</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Promedio general: {{ promedio_general }}</h3>
+<a href="{% url 'crear' %}">Nuevo</a>listar
