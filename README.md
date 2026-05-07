@@ -12,11 +12,45 @@ cd practica-evaluacion
 
 # 📄 2. Crear archivo .gitignore
 
-```bash
-echo venv/ > .gitignore
-echo __pycache__/ >> .gitignore
-echo *.pyc >> .gitignore
-echo db.sqlite3 >> .gitignore
+```cat > .gitignore << 'EOF'
+# Virtual env
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# SQLite
+db.sqlite3
+*.sqlite3
+
+# Logs
+*.log
+
+# Pytest
+.pytest_cache/
+
+# Mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Environment vars
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+EOF
 ```
 
 Guardar cambios:
