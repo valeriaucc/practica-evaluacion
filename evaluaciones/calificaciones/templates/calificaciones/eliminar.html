@@ -1,5 +1,54 @@
-<h2>¿Eliminar?</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+            padding:40px;
+        }
+
+        .contenedor{
+            width:400px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        button{
+            background:red;
+            color:white;
+            padding:10px 20px;
+            border:none;
+            border-radius:5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h2>¿Desea eliminar?</h2>
+
 <form method="post">
+
 {% csrf_token %}
-<button>Confirmar</button>
+
+<button type="submit">
+    Confirmar Eliminación
+</button>
+
 </form>
+
+</div>
+
+</body>
+</html>

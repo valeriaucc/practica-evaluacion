@@ -1,6 +1,62 @@
-<h2>Editar</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+            padding:40px;
+        }
+
+        .contenedor{
+            width:500px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+
+        button{
+            background:orange;
+            color:white;
+            padding:10px 20px;
+            border:none;
+            border-radius:5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h2>Editar Calificación</h2>
+
 <form method="post">
+
 {% csrf_token %}
+
 {{ form.as_p }}
-<button>Actualizar</button>
+
+<button type="submit">
+    Actualizar
+</button>
+
 </form>
+
+</div>
+
+</body>
+</html>

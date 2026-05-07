@@ -1,17 +1,107 @@
-<h2>Lista</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calificaciones</title>
 
-<table border="1">
+    <style>
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+            padding:40px;
+        }
+
+        h1{
+            color:#333;
+        }
+
+        table{
+            width:100%;
+            border-collapse: collapse;
+            background:white;
+        }
+
+        table th{
+            background:#007bff;
+            color:white;
+            padding:12px;
+        }
+
+        table td{
+            padding:10px;
+            border-bottom:1px solid #ddd;
+        }
+
+        .btn{
+            padding:8px 14px;
+            text-decoration:none;
+            border-radius:5px;
+            color:white;
+        }
+
+        .btn-crear{
+            background:green;
+        }
+
+        .btn-editar{
+            background:orange;
+        }
+
+        .btn-eliminar{
+            background:red;
+        }
+
+        .promedio{
+            margin-top:20px;
+            font-size:20px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Sistema de Calificaciones</h1>
+
+<a href="{% url 'crear' %}" class="btn btn-crear">
+    Nueva Calificación
+</a>
+
+<br><br>
+
+<table>
+
+<tr>
+    <th>Estudiante</th>
+    <th>Asignatura</th>
+    <th>Promedio</th>
+    <th>Acciones</th>
+</tr>
+
 {% for c in calificaciones %}
 <tr>
+
 <td>{{ c.nombre_estudiante }}</td>
+<td>{{ c.asignatura }}</td>
 <td>{{ c.promedio }}</td>
+
 <td>
-<a href="{% url 'editar' c.id %}">Editar</a>
-<a href="{% url 'eliminar' c.id %}">Eliminar</a>
+    <a href="{% url 'editar' c.pk %}" class="btn btn-editar">
+        Editar
+    </a>
+
+    <a href="{% url 'eliminar' c.pk %}" class="btn btn-eliminar">
+        Eliminar
+    </a>
 </td>
+
 </tr>
 {% endfor %}
+
 </table>
 
-<h3>Promedio general: {{ promedio_general }}</h3>
-<a href="{% url 'crear' %}">Nuevo</a>listar
+<div class="promedio">
+    Promedio general: {{ promedio_general }}
+</div>
+
+</body>
+</html>

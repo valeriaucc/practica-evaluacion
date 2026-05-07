@@ -1,6 +1,72 @@
-<h2>Crear</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+            padding:40px;
+        }
+
+        .contenedor{
+            width:500px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+
+        button{
+            background:green;
+            color:white;
+            padding:10px 20px;
+            border:none;
+            border-radius:5px;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h2>Crear Calificación</h2>
+
 <form method="post">
+
 {% csrf_token %}
+
 {{ form.as_p }}
-<button>Guardar</button>
+
+<button type="submit">
+    Guardar
+</button>
+
 </form>
+
+<br>
+
+<a href="/">
+    Volver
+</a>
+
+</div>
+
+</body>
+</html>
